@@ -1,0 +1,150 @@
+:root {
+  /* Colors: */
+  --clr-purple-950: #301534;
+
+  /* Semantic colors */
+  --clr-attribution: #3e52a3;
+
+  /* Font sizes (in rem) */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-md: 1rem; /* 16px body text */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.75rem; /* 28px */
+
+  /* Font weights */
+  --fw-thin: 100;
+  --fw-extraLight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+  --fw-extraBold: 800;
+  --fw-black: 900;
+
+  /* Spacing scale (rem) */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-2xl: 2rem; /* 32px */
+  --space-3xl: 2.5rem; /* 40px */
+
+  /* Border-radius scale */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-circle: 50%; /* circular elements */
+
+  /* Line heights */
+  --lh-base: 1.5; /* 24px for body text at 16px */
+  --lh-heading: 1.25; /* 35px for heading text at 28px */
+}
+
+/* 
+********************************
+SELF-HOSTING FONT:
+********************************
+*/
+
+/* VARIABLE FONT: */
+@font-face {
+  font-family: 'Overpass';
+  src: url('/assets/fonts/Overpass-VariableFont_wght.woff2')
+      format('woff2-variations'),
+    url('/assets/fonts/Overpass-VariableFont_wght.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 
+********************************
+GLOBAL CSS VALUES:
+********************************
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+body {
+  font-family: 'Overpass', sans-serif; /* Or serif*/
+  font-size: var(--fs-md);
+  font-weight: 400;
+  line-height: var(--lh-base);
+  letter-spacing: 0;
+
+  color: black;
+
+  background-color: hotpink;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 
+********************************
+MAIN:
+********************************
+*/
+h1 {
+  text-align: center;
+  font-size: var(--fs-xl);
+  color: var(--clr-purple-950);
+}
+
+/* 
+********************************
+FOOTER:
+********************************
+*/
+
+/*UPDATE VALUES!*/
+.attribution {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+
+  font-size: var(--fs-xs);
+  color: var(--clr-attribution);
+}
+
+/* LINKS */
+/* Default State */
+.attribution a:link {
+  color: var(--clr-attribution);
+  text-decoration: none;
+}
+
+/* Visited State */
+.attribution a:visited {
+  color: var(--clr-attribution);
+}
+
+/* State On Hover / Whilst being clicked */
+.attribution a:hover,
+.attribution a:active {
+  opacity: 75%;
+}
+
+/* 
+********************************
+UTILITY CLASSES:
+********************************
+*/
