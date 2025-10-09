@@ -1,6 +1,6 @@
-# FM - [CHALLENGE NAME] Solution - Fraser Jubb
+# FM - Pod request access landing page Solution - Fraser Jubb
 
-This is a solution to [this challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/<link>).
+This is a solution to [this challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pod-request-access-landing-page-eyTmdkLSG).
 
 ## 📖 Table of contents
 
@@ -71,4 +71,3 @@ After submitting this project, I wish to develop the following:
 <a href="mailto:fraserjubb.dev@gmail.com"><img height="30px" align="left" alt="Gmail" style="padding-right:10px" title="Gmail" src="https://img.shields.io/badge/Gmail-D14836?style=plastic&logo=gmail&logoColor=white"/></a>
 
 <br/>
-# fm-pod-landing-page
