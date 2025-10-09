@@ -1,46 +1,48 @@
 :root {
   /* Colors: */
-  --clr-purple-950: #301534;
+  --clr-green: #54e6af;
+  --clr-blue-950: #121725;
+  --clr-blue-900: #2c344b;
+  --clr-blue-600: #5a668a;
+  --clr-blue-300: #c2cbe5;
+  --clr-red: #fb3e3e;
 
   /* Semantic colors */
-  --clr-attribution: #3e52a3;
+  --clr-attribution: var(--clr-blue-600);
 
   /* Font sizes (in rem) */
   --fs-xs: 0.75rem; /* 12px */
   --fs-sm: 0.875rem; /* 14px */
-  --fs-md: 1rem; /* 16px body text */
-  --fs-lg: 1.125rem; /* 18px */
-  --fs-xl: 1.75rem; /* 28px */
+  --fs-md: 1.125rem; /* 18px body text */
+  --fs-lg: 3rem; /* 48px */
 
   /* Font weights */
-  --fw-thin: 100;
-  --fw-extraLight: 200;
   --fw-light: 300;
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-semiBold: 600;
   --fw-bold: 700;
-  --fw-extraBold: 800;
-  --fw-black: 900;
+
+  /* Containers */
+  --container-width-content: 46rem; /* 736px */
+  --container-width-img: 60rem; /* 960px */
 
   /* Spacing scale (rem) */
-  --space-xs: 0.25rem; /* 4px */
-  --space-sm: 0.5rem; /* 8px */
-  --space-md: 0.75rem; /* 12px */
-  --space-lg: 1rem; /* 16px */
-  --space-xl: 1.5rem; /* 24px */
-  --space-2xl: 2rem; /* 32px */
-  --space-3xl: 2.5rem; /* 40px */
+  --space-xs: 0.5rem; /* 8px */
+  --space-sm: 1.5rem; /* 24px */
+  --space-md: 2.5rem; /* 40px */
+  --space-lg: 2.75rem; /* 44px */
+  --space-xl: 3.5rem; /* 56px */
+  --space-2xl: 5.5rem; /* 88px */
+  --space-3xl: 6.5rem; /* 104px */
+  --space-4xl: 9.563rem; /* 153px */
+  --space-5xl: 10rem; /* 160px */
 
   /* Border-radius scale */
-  --radius-sm: 0.25rem; /* 4px */
-  --radius-md: 0.5rem; /* 8px */
-  --radius-lg: 1rem; /* 16px */
+  --radius-capsule: 0.5rem; /* 8px corners */
   --radius-circle: 50%; /* circular elements */
 
   /* Line heights */
-  --lh-base: 1.5; /* 24px for body text at 16px */
-  --lh-heading: 1.25; /* 35px for heading text at 28px */
+  --lh-base: 1.5;
+  --lh-heading: 1.2;
+  --lh-button: 2;
 }
 
 /* 
@@ -51,11 +53,11 @@ SELF-HOSTING FONT:
 
 /* VARIABLE FONT: */
 @font-face {
-  font-family: 'Overpass';
-  src: url('/assets/fonts/Overpass-VariableFont_wght.woff2')
+  font-family: 'Chivo';
+  src: url('/assets/fonts/Chivo-VariableFont_wght.woff2')
       format('woff2-variations'),
-    url('/assets/fonts/Overpass-VariableFont_wght.woff') format('woff');
-  font-weight: 100 900;
+    url('/assets/fonts/Chivo-VariableFont_wght.woff') format('woff');
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
@@ -79,15 +81,15 @@ GLOBAL CSS VALUES:
 }
 
 body {
-  font-family: 'Overpass', sans-serif; /* Or serif*/
+  font-family: 'Chivo', sans-serif;
   font-size: var(--fs-md);
-  font-weight: 400;
+  font-weight: 300;
   line-height: var(--lh-base);
   letter-spacing: 0;
 
-  color: black;
+  color: var(--clr-blue-300);
 
-  background-color: hotpink;
+  background-color: var(--clr-blue-950);
 }
 
 img,
@@ -104,11 +106,6 @@ svg {
 MAIN:
 ********************************
 */
-h1 {
-  text-align: center;
-  font-size: var(--fs-xl);
-  color: var(--clr-purple-950);
-}
 
 /* 
 ********************************
