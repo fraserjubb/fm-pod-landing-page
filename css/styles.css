@@ -119,7 +119,9 @@ MAIN:
   position: absolute;
   z-index: -1;
   width: var(--container-width-img);
+  height: 654px;
   margin-left: 544px;
+  object-fit: cover;
   overflow: hidden;
 }
 
