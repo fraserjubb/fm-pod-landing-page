@@ -189,12 +189,17 @@ MAIN:
 
 .hero__input:focus-visible {
   outline: 2px solid var(--clr-green);
-  outline-offset: 2px;
+  outline-offset: -2px;
 }
 
 .hero__input::placeholder {
   color: white;
   opacity: 0.5;
+}
+
+.hero__input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 2000px var(--clr-blue-900) inset;
+  -webkit-text-fill-color: white;
 }
 
 .hero__button {
