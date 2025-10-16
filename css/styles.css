@@ -188,6 +188,7 @@ Hero Form:
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
   color: white;
+  caret-color: white;
 
   background-color: var(--clr-blue-900);
   border: none;
