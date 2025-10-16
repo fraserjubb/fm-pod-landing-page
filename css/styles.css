@@ -108,6 +108,7 @@ svg {
 MAIN:
 ********************************
 */
+
 .hero {
   position: relative;
   max-width: 1440px;
@@ -162,6 +163,12 @@ MAIN:
   margin-bottom: var(--space-md);
 }
 
+/* 
+******
+Hero Form:
+******
+*/
+/* Default State */
 .hero__form {
   max-width: var(--container-width-description);
   width: 100%;
@@ -191,11 +198,6 @@ MAIN:
   outline: 2px solid var(--clr-blue-600);
   outline-offset: -2px;
 }
-
-/* .hero__input:focus-visible {
-  outline: 2px solid var(--clr-green);
-  outline-offset: -2px;
-} */
 
 .hero__input::placeholder {
   color: white;
@@ -232,7 +234,7 @@ MAIN:
   background-color: #a9f0d6;
 }
 
-/* Error state */
+/* Error State */
 .hero__input--error-outline,
 .hero__input--error-outline:focus-visible {
   outline: 2px solid var(--clr-red);
@@ -247,6 +249,17 @@ MAIN:
   color: var(--clr-red);
 }
 
+/* Success State */
+/* .hero__input:focus-visible {
+  outline: 2px solid var(--clr-green);
+  outline-offset: -2px;
+} */
+
+/* 
+******
+Hero Partners:
+******
+*/
 .hero__partners {
   display: flex;
   gap: var(--space-md);
