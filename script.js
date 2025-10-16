@@ -1,68 +1,47 @@
 const heroForm = document.querySelector('.hero__form');
-const email = document.getElementById('email');
+const emailInput = document.getElementById('email');
 const formButton = document.querySelector('.hero__button');
 
-function createErrorMessage() {
-  const errorEl = document.createElement('p');
-  const errorContent = document.createTextNode('Oops! Please check your email');
+function createFeedback() {
+  const cleanedEmail = emailInput.value.trim();
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  errorEl.classList.add('hero__input--error-message');
+  const feedbackElement = document.createElement('p');
 
-  errorEl.appendChild(errorContent);
-  return errorEl;
+  let feedbackContent;
+  if (cleanedEmail.length === 0) {
+    feedbackContent = document.createTextNode('Oops! Please add your email');
+    emailInput.classList.add('hero__input--error-outline');
+    feedbackElement.classList.add('hero__input--error-message');
+  } else if (!emailRegex.test(cleanedEmail)) {
+    feedbackContent = document.createTextNode('Oops! Please check your email');
+    emailInput.classList.add('hero__input--error-outline');
+    feedbackElement.classList.add('hero__input--error-message');
+  } else {
+    feedbackContent = document.createTextNode('Success!');
+    emailInput.classList.add('hero__input--success-outline');
+    feedbackElement.classList.add('hero__input--success-message');
+  }
+
+  feedbackElement.appendChild(feedbackContent);
+  emailInput.after(feedbackElement);
 }
 
-function createEmptyMessage() {
-  const errorEl = document.createElement('p');
-  const errorContent = document.createTextNode('Oops! Please add your email');
-
-  errorEl.classList.add('hero__input--error-message');
-
-  errorEl.appendChild(errorContent);
-  return errorEl;
-}
-
-function checkExistingError() {
+function removeExistingFeedback() {
   const existingError = heroForm.querySelector('.hero__input--error-message');
   if (existingError) {
     existingError.remove();
-    email.classList.remove('hero__input--error-outline');
+    emailInput.classList.remove('hero__input--error-outline');
   }
 }
 
-function highlightErrorEl() {
-  email.classList.add('hero__input--error-outline');
-}
-
-function addErrorMessage(e) {
-  const cleanedEmail = email.value.trim();
-
-  const errorMessage = createErrorMessage();
-  const emptyMessage = createEmptyMessage();
-
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-  checkExistingError();
-
+function handleFeedback(e) {
   e.preventDefault();
 
-  if (cleanedEmail.length === 0) {
-    console.log('Empty');
-    email.after(emptyMessage);
-    highlightErrorEl();
-  } else if (!emailRegex.test(cleanedEmail)) {
-    console.log('Failed');
-    email.after(errorMessage);
-    highlightErrorEl();
-  } else {
-    console.log('Success');
-  }
+  removeExistingFeedback();
+  createFeedback();
 }
 
-formButton.addEventListener('click', addErrorMessage);
+formButton.addEventListener('click', handleFeedback);
 
-email.addEventListener('input', () => checkExistingError());
-
-// email.addEventListener('focus', () => {
-//   email.style.background = 'hotpink';
-// });
+emailInput.addEventListener('input', () => removeExistingFeedback());
