@@ -238,7 +238,6 @@ Hero Form:
 .hero__input--error-outline,
 .hero__input--error-outline:focus-visible {
   outline: 2px solid var(--clr-red);
-  outline-offset: -2px;
 }
 
 .hero__input--error-message {
@@ -250,10 +249,10 @@ Hero Form:
 }
 
 /* Success State */
-/* .hero__input:focus-visible {
+.hero__input--success-outline {
   outline: 2px solid var(--clr-green);
-  outline-offset: -2px;
-} */
+  /* outline-offset: -2px; */
+}
 
 /* 
 ******
