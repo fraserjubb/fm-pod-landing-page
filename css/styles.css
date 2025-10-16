@@ -254,6 +254,14 @@ Hero Form:
   /* outline-offset: -2px; */
 }
 
+.hero__input--success-message {
+  margin-left: 32px;
+  margin-top: var(--space-xs);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--clr-green);
+}
+
 /* 
 ******
 Hero Partners:
