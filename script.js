@@ -26,7 +26,12 @@ function checkExistingError() {
   const existingError = heroForm.querySelector('.hero__input--error-message');
   if (existingError) {
     existingError.remove();
+    email.classList.remove('hero__input--error-outline');
   }
+}
+
+function highlightErrorEl() {
+  email.classList.add('hero__input--error-outline');
 }
 
 function addErrorMessage(e) {
@@ -44,9 +49,11 @@ function addErrorMessage(e) {
   if (cleanedEmail.length === 0) {
     console.log('Empty');
     email.after(emptyMessage);
+    highlightErrorEl();
   } else if (!emailRegex.test(cleanedEmail)) {
     console.log('Failed');
     email.after(errorMessage);
+    highlightErrorEl();
   } else {
     console.log('Success');
   }
@@ -56,6 +63,6 @@ formButton.addEventListener('click', addErrorMessage);
 
 email.addEventListener('input', () => checkExistingError());
 
-email.addEventListener('focus', () => {
-  email.style.background = 'hotpink';
-});
+// email.addEventListener('focus', () => {
+//   email.style.background = 'hotpink';
+// });
