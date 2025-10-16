@@ -234,17 +234,20 @@ Hero Form:
   background-color: #a9f0d6;
 }
 
+/* Feedback */
+.hero__input-feedback {
+  margin-left: 32px;
+  margin-top: var(--space-xs);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+}
 /* Error State */
 .hero__input--error-outline,
 .hero__input--error-outline:focus-visible {
   outline: 2px solid var(--clr-red);
 }
 
-.hero__input--error-message {
-  margin-left: 32px;
-  margin-top: var(--space-xs);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
+.hero__input-feedback--error {
   color: var(--clr-red);
 }
 
@@ -254,11 +257,7 @@ Hero Form:
   /* outline-offset: -2px; */
 }
 
-.hero__input--success-message {
-  margin-left: 32px;
-  margin-top: var(--space-xs);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-bold);
+.hero__input-feedback--success {
   color: var(--clr-green);
 }
 
