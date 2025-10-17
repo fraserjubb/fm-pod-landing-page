@@ -26,8 +26,8 @@ function createFeedback() {
   }
 
   isSuccess
-    ? (emailInput.style.outline = '2px solid var(--clr-green)')
-    : (emailInput.style.outline = '2px solid var(--clr-red)');
+    ? emailInput.classList.add('hero__input-outline--success')
+    : emailInput.classList.add('hero__input-outline--error');
 
   feedbackElement.appendChild(feedbackContent);
   emailInput.after(feedbackElement);
@@ -41,7 +41,8 @@ function removeExistingFeedback() {
 }
 
 function removeFeedbackOutline() {
-  emailInput.style.outline = '';
+  emailInput.classList.remove('hero__input-outline--success');
+  emailInput.classList.remove('hero__input-outline--error');
 }
 
 function handleFeedback(e) {
@@ -52,7 +53,5 @@ function handleFeedback(e) {
 }
 
 formButton.addEventListener('click', handleFeedback);
-
 emailInput.addEventListener('input', () => removeFeedbackOutline());
-
 emailInput.addEventListener('submit', () => removeExistingFeedback());

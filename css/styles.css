@@ -243,8 +243,7 @@ Hero Form:
   font-weight: var(--fw-bold);
 }
 /* Error State */
-.hero__input--error-outline,
-.hero__input--error-outline:focus-visible {
+.hero__input-outline--error {
   outline: 2px solid var(--clr-red);
 }
 
@@ -253,9 +252,8 @@ Hero Form:
 }
 
 /* Success State */
-.hero__input--success-outline {
+.hero__input-outline--success {
   outline: 2px solid var(--clr-green);
-  /* outline-offset: -2px; */
 }
 
 .hero__input-feedback--success {
