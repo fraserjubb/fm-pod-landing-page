@@ -37,8 +37,11 @@ function removeExistingFeedback() {
   const existingFeedback = heroForm.querySelector('.hero__input-feedback');
   if (existingFeedback) {
     existingFeedback.remove();
-    emailInput.style.outline = 'none';
   }
+}
+
+function removeFeedbackOutline() {
+  emailInput.style.outline = '';
 }
 
 function handleFeedback(e) {
@@ -49,5 +52,7 @@ function handleFeedback(e) {
 }
 
 formButton.addEventListener('click', handleFeedback);
+
+emailInput.addEventListener('input', () => removeFeedbackOutline());
 
 emailInput.addEventListener('submit', () => removeExistingFeedback());
