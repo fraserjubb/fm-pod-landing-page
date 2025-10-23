@@ -43,14 +43,10 @@ function removeFeedback() {
     'hero__input-feedback--success',
     'hero__input-feedback--error'
   );
-  // feedbackElement.classList.remove('hero__input-feedback--error');
   emailInput.classList.remove(
     'hero__input-outline--success',
     'hero__input-outline--error'
   );
-  // emailInput.classList.remove('hero__input-outline--error');
-  console.log(feedbackElement);
-  console.log(emailInput);
 }
 
 function checkFeedback() {
@@ -67,6 +63,5 @@ function handleFeedback(e) {
   checkFeedback();
 }
 
-// formButton.addEventListener('click', handleFeedback);
 emailInput.addEventListener('input', removeFeedback);
 heroForm.addEventListener('submit', handleFeedback);
