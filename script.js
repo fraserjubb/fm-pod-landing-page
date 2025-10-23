@@ -4,7 +4,7 @@ const formButton = document.querySelector('.hero__button');
 
 function createFeedback() {
   const cleanedEmail = emailInput.value.trim();
-  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/u;
 
   const feedbackElement = document.createElement('p');
   feedbackElement.classList.add('hero__input-feedback');
