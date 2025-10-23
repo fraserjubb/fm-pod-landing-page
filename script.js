@@ -18,26 +18,39 @@ function updateFeedback() {
   const cleanedEmail = emailInput.value.trim();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/u;
 
+  const isValid = emailRegex.test(cleanedEmail);
+
   cleanedEmail.length === 0
     ? (feedbackElement.textContent = 'Oops! Please add your email')
     : (feedbackElement.textContent = 'Oops! Please check your email');
 
-  if (emailRegex.test(cleanedEmail)) {
+  if (isValid) {
     feedbackElement.textContent = 'Success!';
     feedbackElement.classList.add('hero__input-feedback--success');
     emailInput.classList.add('hero__input-outline--success');
-  } else if (!emailRegex.test(cleanedEmail)) {
+  } else if (!isValid) {
     feedbackElement.classList.add('hero__input-feedback--error');
     emailInput.classList.add('hero__input-outline--error');
   }
 }
 
 function removeFeedback() {
+  const existingFeedback = document.querySelector('.hero__input-feedback');
+  if (!existingFeedback) return; // nothing to remove yet
+
   feedbackElement.textContent = '';
-  feedbackElement.classList.remove('hero__input-feedback--success');
-  feedbackElement.classList.remove('hero__input-feedback--error');
-  emailInput.classList.remove('hero__input-outline--success');
-  emailInput.classList.remove('hero__input-outline--error');
+  feedbackElement.classList.remove(
+    'hero__input-feedback--success',
+    'hero__input-feedback--error'
+  );
+  // feedbackElement.classList.remove('hero__input-feedback--error');
+  emailInput.classList.remove(
+    'hero__input-outline--success',
+    'hero__input-outline--error'
+  );
+  // emailInput.classList.remove('hero__input-outline--error');
+  console.log(feedbackElement);
+  console.log(emailInput);
 }
 
 function checkFeedback() {
@@ -54,6 +67,6 @@ function handleFeedback(e) {
   checkFeedback();
 }
 
-formButton.addEventListener('click', handleFeedback);
+// formButton.addEventListener('click', handleFeedback);
 emailInput.addEventListener('input', removeFeedback);
 heroForm.addEventListener('submit', handleFeedback);
