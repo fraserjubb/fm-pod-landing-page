@@ -2,14 +2,15 @@ const heroForm = document.querySelector('.hero__form');
 const emailInput = document.getElementById('email');
 const formButton = document.querySelector('.hero__button');
 
-let feedbackExists;
+let feedbackCreated = false;
 let feedbackElement;
 
 function createFeedback() {
   feedbackElement = document.createElement('p');
   feedbackElement.classList.add('hero__input-feedback');
   feedbackElement.textContent = '';
-  feedbackExists = true;
+  feedbackElement.setAttribute('aria-live', 'polite');
+  feedbackCreated = true;
 
   emailInput.after(feedbackElement);
 }
@@ -35,9 +36,6 @@ function updateFeedback() {
 }
 
 function removeFeedback() {
-  const existingFeedback = document.querySelector('.hero__input-feedback');
-  if (!existingFeedback) return; // nothing to remove yet
-
   feedbackElement.textContent = '';
   feedbackElement.classList.remove(
     'hero__input-feedback--success',
@@ -50,7 +48,7 @@ function removeFeedback() {
 }
 
 function checkFeedback() {
-  if (!feedbackExists) {
+  if (!feedbackCreated) {
     createFeedback();
   }
   removeFeedback();
