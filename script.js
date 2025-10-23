@@ -9,27 +9,32 @@ function createFeedback() {
   const feedbackElement = document.createElement('p');
   feedbackElement.classList.add('hero__input-feedback');
 
-  let feedbackContent;
+  let feedbackText;
   let isSuccess;
   if (cleanedEmail.length === 0) {
     isSuccess = false;
-    feedbackContent = document.createTextNode('Oops! Please add your email');
+    feedbackText = document.createTextNode('Oops! Please add your email');
     feedbackElement.classList.add('hero__input-feedback--error');
   } else if (!emailRegex.test(cleanedEmail)) {
     isSuccess = false;
-    feedbackContent = document.createTextNode('Oops! Please check your email');
+    feedbackText = document.createTextNode('Oops! Please check your email');
     feedbackElement.classList.add('hero__input-feedback--error');
   } else {
     isSuccess = true;
-    feedbackContent = document.createTextNode('Success!');
+    feedbackText = document.createTextNode('Success!');
     feedbackElement.classList.add('hero__input-feedback--success');
   }
+
+  emailInput.classList.remove(
+    'hero__input-outline--success',
+    'hero__input-outline--error'
+  );
 
   isSuccess
     ? emailInput.classList.add('hero__input-outline--success')
     : emailInput.classList.add('hero__input-outline--error');
 
-  feedbackElement.appendChild(feedbackContent);
+  feedbackElement.appendChild(feedbackText);
   emailInput.after(feedbackElement);
 }
 
@@ -53,5 +58,5 @@ function handleFeedback(e) {
 }
 
 formButton.addEventListener('click', handleFeedback);
-emailInput.addEventListener('input', () => removeFeedbackOutline());
-emailInput.addEventListener('submit', () => removeExistingFeedback());
+emailInput.addEventListener('input', removeFeedbackOutline());
+heroForm.addEventListener('submit', handleFeedback());
