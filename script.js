@@ -2,61 +2,58 @@ const heroForm = document.querySelector('.hero__form');
 const emailInput = document.getElementById('email');
 const formButton = document.querySelector('.hero__button');
 
+let feedbackExists;
+let feedbackElement;
+
 function createFeedback() {
-  const cleanedEmail = emailInput.value.trim();
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/u;
-
-  const feedbackElement = document.createElement('p');
+  feedbackElement = document.createElement('p');
   feedbackElement.classList.add('hero__input-feedback');
+  feedbackElement.textContent = '';
+  feedbackExists = true;
 
-  let feedbackText;
-  let isSuccess;
-  if (cleanedEmail.length === 0) {
-    isSuccess = false;
-    feedbackText = document.createTextNode('Oops! Please add your email');
-    feedbackElement.classList.add('hero__input-feedback--error');
-  } else if (!emailRegex.test(cleanedEmail)) {
-    isSuccess = false;
-    feedbackText = document.createTextNode('Oops! Please check your email');
-    feedbackElement.classList.add('hero__input-feedback--error');
-  } else {
-    isSuccess = true;
-    feedbackText = document.createTextNode('Success!');
-    feedbackElement.classList.add('hero__input-feedback--success');
-  }
-
-  emailInput.classList.remove(
-    'hero__input-outline--success',
-    'hero__input-outline--error'
-  );
-
-  isSuccess
-    ? emailInput.classList.add('hero__input-outline--success')
-    : emailInput.classList.add('hero__input-outline--error');
-
-  feedbackElement.appendChild(feedbackText);
   emailInput.after(feedbackElement);
 }
 
-function removeExistingFeedback() {
-  const existingFeedback = heroForm.querySelector('.hero__input-feedback');
-  if (existingFeedback) {
-    existingFeedback.remove();
+function updateFeedback() {
+  const cleanedEmail = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/u;
+
+  cleanedEmail.length === 0
+    ? (feedbackElement.textContent = 'Oops! Please add your email')
+    : (feedbackElement.textContent = 'Oops! Please check your email');
+
+  if (emailRegex.test(cleanedEmail)) {
+    feedbackElement.textContent = 'Success!';
+    feedbackElement.classList.add('hero__input-feedback--success');
+    emailInput.classList.add('hero__input-outline--success');
+  } else if (!emailRegex.test(cleanedEmail)) {
+    feedbackElement.classList.add('hero__input-feedback--error');
+    emailInput.classList.add('hero__input-outline--error');
   }
 }
 
-function removeFeedbackOutline() {
+function removeFeedback() {
+  feedbackElement.textContent = '';
+  feedbackElement.classList.remove('hero__input-feedback--success');
+  feedbackElement.classList.remove('hero__input-feedback--error');
   emailInput.classList.remove('hero__input-outline--success');
   emailInput.classList.remove('hero__input-outline--error');
+}
+
+function checkFeedback() {
+  if (!feedbackExists) {
+    createFeedback();
+  }
+  removeFeedback();
+  updateFeedback();
 }
 
 function handleFeedback(e) {
   e.preventDefault();
 
-  removeExistingFeedback();
-  createFeedback();
+  checkFeedback();
 }
 
 formButton.addEventListener('click', handleFeedback);
-emailInput.addEventListener('input', removeFeedbackOutline());
-heroForm.addEventListener('submit', handleFeedback());
+emailInput.addEventListener('input', removeFeedback);
+heroForm.addEventListener('submit', handleFeedback);
