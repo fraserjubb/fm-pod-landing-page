@@ -235,6 +235,10 @@ Hero Form:
   background-color: #a9f0d6;
 }
 
+.hero__button:active {
+  transform: scale(0.99);
+}
+
 /* Feedback */
 .hero__input-feedback {
   margin-left: 32px;
@@ -301,7 +305,7 @@ FOOTER:
 /* State On Hover / Whilst being clicked */
 .attribution a:hover,
 .attribution a:active {
-  opacity: 75%;
+  opacity: 0.75;
 }
 
 /* 
