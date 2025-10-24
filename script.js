@@ -1,10 +1,25 @@
+/* 
+********************************
+QUERY SELECTORS:
+********************************
+*/
 const heroForm = document.querySelector('.hero__form');
 const emailInput = document.getElementById('email');
 const formButton = document.querySelector('.hero__button');
 
+/* 
+********************************
+GLOBAL VARIABLES:
+********************************
+*/
 let feedbackCreated = false;
 let feedbackElement;
 
+/* 
+********************************
+FUNCTIONS:
+********************************
+*/
 function createFeedback() {
   feedbackElement = document.createElement('p');
   feedbackElement.classList.add('hero__input-feedback');
@@ -21,18 +36,27 @@ function updateFeedback() {
 
   const isValid = emailRegex.test(cleanedEmail);
 
-  cleanedEmail.length === 0
-    ? (feedbackElement.textContent = 'Oops! Please add your email')
-    : (feedbackElement.textContent = 'Oops! Please check your email');
+  let message;
+  let feedbackClass;
+  let outlineClass;
 
-  if (isValid) {
-    feedbackElement.textContent = 'Success!';
-    feedbackElement.classList.add('hero__input-feedback--success');
-    emailInput.classList.add('hero__input-outline--success');
+  if (cleanedEmail.length === 0) {
+    message = 'Oops! Please add your email';
+    feedbackClass = 'hero__input-feedback--error';
+    outlineClass = 'hero__input-outline--error';
   } else if (!isValid) {
-    feedbackElement.classList.add('hero__input-feedback--error');
-    emailInput.classList.add('hero__input-outline--error');
+    message = 'Oops! Please check your email';
+    feedbackClass = 'hero__input-feedback--error';
+    outlineClass = 'hero__input-outline--error';
+  } else {
+    message = 'Success!';
+    feedbackClass = 'hero__input-feedback--success';
+    outlineClass = 'hero__input-outline--success';
   }
+
+  feedbackElement.textContent = message;
+  feedbackElement.classList.add(feedbackClass);
+  emailInput.classList.add(outlineClass);
 }
 
 function removeFeedback() {
@@ -63,5 +87,10 @@ function handleFeedback(e) {
   checkFeedback();
 }
 
+/* 
+********************************
+EVENT LISTENERS:
+********************************
+*/
 emailInput.addEventListener('input', removeFeedback);
 heroForm.addEventListener('submit', handleFeedback);
