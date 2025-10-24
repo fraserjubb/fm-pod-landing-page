@@ -36,6 +36,8 @@ function updateFeedback() {
 }
 
 function removeFeedback() {
+  if (!feedbackElement) return; // prevent error before it's created
+
   feedbackElement.textContent = '';
   feedbackElement.classList.remove(
     'hero__input-feedback--success',
