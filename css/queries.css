@@ -4,7 +4,7 @@ TABLET:
 ********************************
 */
 
-@media (max-width: 768px) {
+@media (max-width: 1072px) {
   :root {
     /* Containers */
     --container-width-content: 37rem; /* 592px */
@@ -14,13 +14,17 @@ TABLET:
   .hero {
     margin-top: 0;
     margin-left: 44px;
-    /* height: auto; */
+  }
+
+  .hero__image-wrapper::after {
+    right: -125px;
+    top: 816px;
   }
 
   .hero__image {
-    transform: translateX(330px);
+    transform: translateX(85px);
+    top: 0;
 
-    /* margin-left: 330px; */
     height: 868px;
   }
 
@@ -29,8 +33,15 @@ TABLET:
   }
 
   .logo {
-    margin-top: 156px;
+    top: 156px;
+    left: 44px;
+    margin-bottom: 0;
   }
+
+  .hero__content {
+    margin-top: 316px;
+  }
+
   .hero__title {
     max-width: 528px;
   }
@@ -40,9 +51,9 @@ TABLET:
     text-align: center;
   }
 
-  /* .attribution {
-    margin-top: var(--space-xl);
-  } */
+  .hero__partners {
+    padding-bottom: 25px;
+  }
 }
 
 /* 
@@ -55,17 +66,27 @@ MOBILE:
   :root {
     --container-width-content: 303px;
   }
+  html,
+  body {
+    overflow-x: hidden;
+  }
   .hero {
-    /* padding: 0 36px; */
     margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__image-wrapper::after {
+    top: -500px;
+    display: none;
   }
 
   .hero__image {
-    transform: translateX(-45px) translateY(-20px);
+    transform: translateX(85px) translateY(-50px);
 
-    /* margin: 0; */
-    /* max-width: 375px; */
-    /* width: 100%; */
+    top: 0;
+    right: 0;
+
     opacity: 0.1;
   }
 
@@ -75,19 +96,21 @@ MOBILE:
   }
 
   .logo {
-    margin: 146.5px auto 166.5px auto;
-    /* margin-top: 146.5px; */
-    /* margin-bottom: 166.5px; */
+    position: absolute;
+    top: 146.5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .hero__content {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
+    align-items: center;
+
     margin: 0 auto;
+    margin-top: 369px;
     padding: 0;
-    /* padding: 0 36px; */
+
     background-color: transparent;
   }
   .hero__title {
@@ -116,6 +139,7 @@ MOBILE:
     gap: 16px;
     justify-content: center;
     margin-bottom: var(--space-md);
+    padding-bottom: 0;
   }
 
   .hero__partners img:nth-of-type(1) {
@@ -133,5 +157,9 @@ MOBILE:
   .hero__partners img:nth-of-type(4) {
     width: 76px;
     height: 16.95px;
+  }
+
+  .attribution {
+    margin-top: 0;
   }
 }

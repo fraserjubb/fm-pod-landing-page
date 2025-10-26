@@ -83,8 +83,8 @@ GLOBAL CSS VALUES:
 }
 
 body {
-  height: 100%;
-  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
 
   font-family: 'Chivo', sans-serif;
   font-size: var(--fs-md);
@@ -120,22 +120,30 @@ body {
   position: relative;
   max-width: 1440px;
   width: 100%;
-  /* min-height: calc(100vh - var(--space-4xl)); */
   margin-top: var(--space-4xl);
   margin-left: var(--space-5xl);
+}
 
-  overflow: hidden;
+.hero__image-wrapper {
+  position: relative;
+}
+.hero__image-wrapper::after {
+  content: '';
+  background-image: url('/assets/images/desktop/bg-pattern-dots.svg');
+  width: 232px;
+  height: 104px;
+  position: absolute;
+  top: 755px;
+  right: 0;
 }
 
 .hero__image {
   position: absolute;
   z-index: -1;
   max-width: none;
-  /* width: var(--container-width-img); */
   height: 654px;
-  /* margin-left: 384px; */
-  transform: translateX(384px);
-  /* object-fit: cover; */
+  top: 153px;
+  right: 0;
   overflow: hidden;
 }
 
@@ -144,15 +152,19 @@ body {
 }
 
 .logo {
+  position: absolute;
+  left: 160px;
+  top: 153px;
   width: 134.85px;
   height: 56px;
   margin-bottom: var(--space-3xl);
+  z-index: 99;
 }
 
 .hero__content {
-  /* max-width: 46rem; */
   max-width: var(--container-width-content);
   width: 100%;
+  margin-top: 313px;
   padding-top: var(--space-2xl);
   background-color: var(--clr-blue-950);
 }
@@ -285,7 +297,7 @@ Hero Partners:
 .hero__partners {
   display: flex;
   gap: var(--space-md);
-  padding-bottom: 1px;
+  padding-bottom: 5px;
 }
 
 /* 

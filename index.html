@@ -13,17 +13,15 @@
     <link rel="stylesheet" href="/css/queries.css" />
   </head>
   <body>
-    <main class="hero">
+    <div class="hero__image-wrapper">
+      <img src="assets/images/desktop/logo.svg" alt="Pod Logo" class="logo" />
       <picture>
-        <source srcset="assets/images/mobile/image-host.jpg" media="(width <= 768px)" />
-        <source srcset="assets/images/tablet/image-host.jpg" media="(width <= 768px)" />
+        <source srcset="assets/images/mobile/image-host.jpg" media="(width <= 660px)" />
+        <source srcset="assets/images/tablet/image-host.jpg" media="(width <= 1072px)" />
         <img src="assets/images/desktop/image-host.jpg" alt="Image of someone hosting a podcast" class="hero__image" />
       </picture>
-      <!-- <img src="assets/images/desktop/image-host.jpg" alt="Image of someone hosting a podcast" class="hero__image" /> -->
-
-      <!-- <div class="hero-left"> -->
-      <img src="assets/images/desktop/logo.svg" alt="Pod Logo" class="logo" />
-
+    </div>
+    <main class="hero">
       <section class="hero__content">
         <h1 class="hero__title">Publish your podcasts <span>everywhere.</span></h1>
         <p class="hero__description">Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
@@ -45,7 +43,6 @@
           <img src="assets/images/desktop/pocket-casts.svg" alt="Pocket Casts" />
         </div>
       </section>
-      <!-- </div> -->
     </main>
     <footer class="attribution">
       Challenge by <a href="https://www.frontendmentor.io/profile/fraserjubb" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. Coded by
