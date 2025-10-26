@@ -113,7 +113,7 @@ MAIN:
   position: relative;
   max-width: 1440px;
   width: 100%;
-  height: calc(100vh - var(--space-4xl));
+  /* min-height: calc(100vh - var(--space-4xl)); */
   margin-top: var(--space-4xl);
   overflow: hidden;
 }
@@ -139,7 +139,9 @@ MAIN:
 }
 
 .hero__content {
-  width: var(--container-width-content);
+  /* max-width: 46rem; */
+  max-width: var(--container-width-content);
+  width: 100%;
   padding-top: var(--space-2xl);
   background-color: var(--clr-blue-950);
 }
@@ -284,7 +286,7 @@ FOOTER:
 /*UPDATE VALUES!*/
 .attribution {
   text-align: center;
-  margin-bottom: var(--space-xl);
+  margin-top: var(--space-xl);
 
   font-size: var(--fs-xs);
   color: var(--clr-attribution);
