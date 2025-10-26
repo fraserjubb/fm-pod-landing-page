@@ -14,33 +14,38 @@
   </head>
   <body>
     <main class="hero">
-      <img src="assets/images/desktop/image-host.jpg" alt="Image of someone hosting a podcast" class="hero__image" />
+      <picture>
+        <source srcset="assets/images/mobile/image-host.jpg" media="(width <= 768px)" />
+        <source srcset="assets/images/tablet/image-host.jpg" media="(width <= 768px)" />
+        <img src="assets/images/desktop/image-host.jpg" alt="Image of someone hosting a podcast" class="hero__image" />
+      </picture>
+      <!-- <img src="assets/images/desktop/image-host.jpg" alt="Image of someone hosting a podcast" class="hero__image" /> -->
 
-      <div class="hero-left">
-        <img src="assets/images/desktop/logo.svg" alt="Pod Logo" class="logo" />
+      <!-- <div class="hero-left"> -->
+      <img src="assets/images/desktop/logo.svg" alt="Pod Logo" class="logo" />
 
-        <section class="hero__content">
-          <h1 class="hero__title">Publish your podcasts <span>everywhere.</span></h1>
-          <p class="hero__description">Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
+      <section class="hero__content">
+        <h1 class="hero__title">Publish your podcasts <span>everywhere.</span></h1>
+        <p class="hero__description">Upload your audio to Pod with a single click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts and more!</p>
 
-          <form action="/" method="get" class="hero__form" novalidate>
-            <div class="hero__form-group">
-              <label for="email" class="visually-hidden">Email address</label>
-              <input type="email" name="email" id="email" placeholder="Email address" class="hero__input" required />
-              <!-- <p class="hero__input--error-message">Oops! Please check your email</p> -->
+        <form action="/" method="get" class="hero__form" novalidate>
+          <div class="hero__form-group">
+            <label for="email" class="visually-hidden">Email address</label>
+            <input type="email" name="email" id="email" placeholder="Email address" class="hero__input" required />
+            <!-- <p class="hero__input--error-message">Oops! Please check your email</p> -->
 
-              <button class="hero__button" type="submit">Request access</button>
-            </div>
-          </form>
-
-          <div class="hero__partners">
-            <img src="assets/images/desktop/spotify.svg" alt="Spotify" />
-            <img src="assets/images/desktop/apple-podcast.svg" alt="Apple Podcast" />
-            <img src="assets/images/desktop/google-podcasts.svg" alt="Google Podcasts" />
-            <img src="assets/images/desktop/pocket-casts.svg" alt="Pocket Casts" />
+            <button class="hero__button" type="submit">Request access</button>
           </div>
-        </section>
-      </div>
+        </form>
+
+        <div class="hero__partners">
+          <img src="assets/images/desktop/spotify.svg" alt="Spotify" />
+          <img src="assets/images/desktop/apple-podcast.svg" alt="Apple Podcast" />
+          <img src="assets/images/desktop/google-podcasts.svg" alt="Google Podcasts" />
+          <img src="assets/images/desktop/pocket-casts.svg" alt="Pocket Casts" />
+        </div>
+      </section>
+      <!-- </div> -->
     </main>
     <footer class="attribution">
       Challenge by <a href="https://www.frontendmentor.io/profile/fraserjubb" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. Coded by

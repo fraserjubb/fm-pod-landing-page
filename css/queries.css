@@ -13,11 +13,14 @@ TABLET:
 
   .hero {
     margin-top: 0;
+    margin-left: 44px;
     /* height: auto; */
   }
 
   .hero__image {
-    margin-left: 308px;
+    transform: translateX(330px);
+
+    /* margin-left: 330px; */
     height: 868px;
   }
 
@@ -53,13 +56,16 @@ MOBILE:
     --container-width-content: 303px;
   }
   .hero {
-    padding: 0 36px;
+    /* padding: 0 36px; */
+    margin-left: 0;
   }
 
   .hero__image {
-    margin: 0;
-    max-width: 375px;
-    width: 100%;
+    transform: translateX(-45px) translateY(-20px);
+
+    /* margin: 0; */
+    /* max-width: 375px; */
+    /* width: 100%; */
     opacity: 0.1;
   }
 
@@ -77,7 +83,11 @@ MOBILE:
   .hero__content {
     display: flex;
     flex-direction: column;
-    padding-top: 0;
+    /* align-items: center; */
+    /* justify-content: center; */
+    margin: 0 auto;
+    padding: 0;
+    /* padding: 0 36px; */
     background-color: transparent;
   }
   .hero__title {
