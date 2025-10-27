@@ -10,10 +10,25 @@ TABLET:
     --container-width-content: 37rem; /* 592px */
     --container-width-img: 460px;
   }
+  /* 
+  Useful for future:!!!!
+  * {
+    outline: 1px solid red;
+  } */
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 768px;
+    overflow: hidden;
+  }
 
   .hero {
-    margin-top: 0;
     margin-left: 44px;
+  }
+
+  .hero__image-wrapper {
+    top: 153px;
+    position: relative;
   }
 
   .hero__image-wrapper::after {
@@ -22,18 +37,14 @@ TABLET:
   }
 
   .hero__image {
-    transform: translateX(85px);
-    top: 0;
+    transform: translateX(90px);
+    top: -156px;
+    right: 0;
 
     height: 868px;
   }
 
-  .hero-left {
-    margin-left: var(--space-lg);
-  }
-
   .logo {
-    top: 156px;
     left: 44px;
     margin-bottom: 0;
   }
@@ -70,6 +81,7 @@ MOBILE:
   body {
     overflow-x: hidden;
   }
+
   .hero {
     margin-left: 0;
     display: flex;
@@ -82,22 +94,13 @@ MOBILE:
   }
 
   .hero__image {
-    transform: translateX(85px) translateY(-50px);
-
-    top: 0;
-    right: 0;
-
+    transform: translateX(30px);
     opacity: 0.1;
-  }
-
-  .hero-left {
-    margin-left: 0;
-    width: 100%;
   }
 
   .logo {
     position: absolute;
-    top: 146.5px;
+    top: 28px;
     left: 50%;
     transform: translate(-50%, -50%);
   }

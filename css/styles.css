@@ -83,9 +83,6 @@ GLOBAL CSS VALUES:
 }
 
 body {
-  max-width: 1440px;
-  margin: 0 auto;
-
   font-family: 'Chivo', sans-serif;
   font-size: var(--fs-md);
   font-weight: var(--fw-light);
@@ -116,16 +113,24 @@ body {
   overflow-x: hidden;
 }
 
-.hero {
+.wrapper {
   position: relative;
   max-width: 1440px;
+  margin: 153px auto;
+}
+
+.hero {
+  position: relative;
   width: 100%;
-  margin-top: var(--space-4xl);
   margin-left: var(--space-5xl);
 }
 
 .hero__image-wrapper {
-  position: relative;
+  /* position: relative; */
+  position: absolute;
+  top: -160px;
+  right: 0;
+  width: 100%;
 }
 .hero__image-wrapper::after {
   content: '';
@@ -133,32 +138,31 @@ body {
   width: 232px;
   height: 104px;
   position: absolute;
-  top: 755px;
+  top: 600px;
   right: 0;
 }
 
 .hero__image {
   position: absolute;
   z-index: -1;
-  max-width: none;
   height: 654px;
-  top: 153px;
+  top: 0;
   right: 0;
-  overflow: hidden;
+  transform: translateX(50px);
 }
 
-.hero-left {
-  margin-left: var(--space-5xl);
+.hero__image img {
+  overflow: hidden;
 }
 
 .logo {
   position: absolute;
   left: 160px;
-  top: 153px;
+  top: 0;
   width: 134.85px;
   height: 56px;
   margin-bottom: var(--space-3xl);
-  z-index: 99;
+  /* z-index: 99; */
 }
 
 .hero__content {
