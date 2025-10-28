@@ -4,7 +4,7 @@ TABLET:
 ********************************
 */
 
-@media (max-width: 1072px) {
+@media (max-width: 1175px) {
   :root {
     /* Containers */
     --container-width-content: 37rem; /* 592px */
@@ -73,7 +73,7 @@ MOBILE:
 ********************************
 */
 
-@media (max-width: 660px) {
+@media (max-width: 640px) {
   :root {
     --container-width-content: 18.88rem; /* 302px */
 
