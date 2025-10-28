@@ -26,6 +26,7 @@
   --container-width-description: 28rem; /* 448px */
 
   /* Spacing scale (rem) */
+  --space-2xs: 0.25rem; /* 4px */
   --space-xs: 0.5rem; /* 8px */
   --space-sm: 1.5rem; /* 24px */
   --space-md: 2.5rem; /* 40px */
@@ -115,8 +116,8 @@ body {
 
 .wrapper {
   position: relative;
-  max-width: 1440px;
-  margin: 153px auto;
+  max-width: 90rem; /* 1440px */
+  margin: 9.563rem auto 4rem auto;
 }
 
 .hero {
@@ -128,27 +129,27 @@ body {
 .hero__image-wrapper {
   /* position: relative; */
   position: absolute;
-  top: -160px;
+  top: -10rem; /* -160px */
   right: 0;
   width: 100%;
 }
 .hero__image-wrapper::after {
   content: '';
   background-image: url('/assets/images/desktop/bg-pattern-dots.svg');
-  width: 232px;
-  height: 104px;
+  width: 14.5rem; /* 232px */
+  height: 6.5rem; /* 104px */
   position: absolute;
-  top: 600px;
+  top: 37.5rem; /* 600px */
   right: 0;
 }
 
 .hero__image {
   position: absolute;
   z-index: -1;
-  height: 654px;
+  height: 40.875rem; /* 654px */
   top: 0;
   right: 0;
-  transform: translateX(50px);
+  transform: translateX(3.125rem); /* 50px */
 }
 
 .hero__image img {
@@ -157,18 +158,17 @@ body {
 
 .logo {
   position: absolute;
-  left: 160px;
+  left: 10rem; /* 160px */
   top: 0;
-  width: 134.85px;
-  height: 56px;
+  width: 8.428rem; /* 134.85px */
+  height: 3.5rem; /* 56px */
   margin-bottom: var(--space-3xl);
-  /* z-index: 99; */
 }
 
 .hero__content {
   max-width: var(--container-width-content);
   width: 100%;
-  margin-top: 313px;
+  margin-top: 19.563rem; /* 313px */
   padding-top: var(--space-2xl);
   background-color: var(--clr-blue-950);
 }
@@ -201,7 +201,7 @@ Hero Form:
 .hero__form {
   max-width: var(--container-width-description);
   width: 100%;
-  margin-bottom: 64px;
+  margin-bottom: 4rem; /* 64px */
 }
 
 .hero__form-group {
@@ -210,9 +210,9 @@ Hero Form:
 
 .hero__input {
   width: 100%;
-  height: 52px;
+  height: 3.25rem; /* 52px */
   padding-left: var(--space-sm);
-  padding-right: 200px;
+  padding-right: 12.5rem; /* 200px */
 
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
@@ -235,7 +235,7 @@ Hero Form:
 }
 
 .hero__input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 2000px var(--clr-blue-900) inset;
+  -webkit-box-shadow: 0 0 0 125rem var(--clr-blue-900) inset;
   -webkit-text-fill-color: white;
 }
 
@@ -243,10 +243,10 @@ Hero Form:
   position: absolute;
   top: 0;
   right: 0;
-  width: 173px;
-  height: 44px;
-  margin-top: 4px;
-  margin-right: 4px;
+  width: 10.75rem; /* 172px */
+  height: 2.75rem; /* 44px */
+  margin-top: var(--space-2xs);
+  margin-right: var(--space-2xs);
 
   font-size: var(--fs-sm);
   font-weight: var(--fw-bold);
@@ -270,7 +270,7 @@ Hero Form:
 
 /* Feedback */
 .hero__input-feedback {
-  margin-left: 32px;
+  margin-left: 2rem; /* 32px */
   margin-top: var(--space-xs);
   font-size: var(--fs-xs);
   font-weight: var(--fw-bold);
@@ -301,7 +301,7 @@ Hero Partners:
 .hero__partners {
   display: flex;
   gap: var(--space-md);
-  padding-bottom: 5px;
+  padding-bottom: 0.25rem; /* 4px */
 }
 
 /* 
@@ -313,8 +313,7 @@ FOOTER:
 /*UPDATE VALUES!*/
 .attribution {
   text-align: center;
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-md);
+  margin: var(--space-md) 0;
 
   font-size: var(--fs-xs);
   color: var(--clr-attribution);
