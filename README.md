@@ -68,10 +68,9 @@ After submitting this project, I wish to develop the following:
 - [regex.com (Website)](https://regexr.com/)
 - [Regex Cheatsheet (Website)](https://ihateregex.io/) - Funny, but also useful website someone came up with for regex.
 
-## Known Issues
+## Note
 
-- On tablet, click-and-drag text selection inside the email input may not work due to the Figma-style button being inside the input. Keyboard shortcuts (Cmd/Ctrl + A) still work, and form submission functions as expected.
-- This issue was not fixed due to the time it would take, and it was deemed more valuable to move on to the next project for learning purposes.
+- Any text selection issues in the email input appear only when using Chrome DevTools device toolbar. This does not occur on real devices.
 
 ## Noteworthy Updates Since Initial Submission
 
