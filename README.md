@@ -40,22 +40,33 @@ This is a solution to [this challenge on Frontend Mentor](https://www.frontendme
 
 In this particular project:
 
-1.
+1. I found this temporary addition useful for troubleshooting spacing issues as it is much easier to visualize elements.
 
 ```css
-[INSERT ANY CODE HERE]
+  * {
+    outline: 1px solid red;
+  } */
 ```
+
+2. This was my first time learning about regex (regular expressions). I found using ChatGPT to generate alongside [regex.com](https://regexr.com/) to break it down as the best and most time-effective way to come up with them.
+
+```js
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/u;
+```
+
+3. In JavaScript, using `textContent` is best for simple text replacement of an element, whereas `createTextNode` is better for more complex mixing of text and other elements.
 
 ### Continued Development
 
 After submitting this project, I wish to develop the following:
 
-1. [INSERT TEXT HERE]
+1. Find a faster workflow for converting px to rem values.
 
 ### Useful Resources
 
-- Nothing of note used for this project.
-- [[INSERT TEXT TO APPEAR HERE] ([SPECIFY MEDIA TYPE HERE])](link) - [DESCRIPTION OF HOW IT HELPED HERE]
+- [Tutorial on Regular Expressions (Regex) (YouTube)](https://www.youtube.com/watch?v=rhzKDrUiJVk)
+- [regex.com (Website)](https://regexr.com/)
+- [Regex Cheatsheet (Website)](https://ihateregex.io/) - Funny, but also useful website someone came up with for regex.
 
 ## Noteworthy Updates Since Initial Submission
 
