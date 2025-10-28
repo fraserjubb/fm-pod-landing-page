@@ -5,7 +5,6 @@ QUERY SELECTORS:
 */
 const heroForm = document.querySelector('.hero__form');
 const emailInput = document.getElementById('email');
-const formButton = document.querySelector('.hero__button');
 
 /* 
 ********************************
