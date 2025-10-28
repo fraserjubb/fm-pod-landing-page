@@ -3,7 +3,6 @@
 TABLET:
 ********************************
 */
-
 @media (max-width: 1175px) {
   :root {
     /* Containers */
@@ -11,6 +10,7 @@ TABLET:
     --container-width-img: 28.75rem; /* 460px */
   }
 
+  /* Containers & Wrappers */
   .wrapper {
     margin: 0 auto;
     max-width: 48rem; /* 768px */
@@ -49,6 +49,7 @@ TABLET:
     margin-top: 19.75rem; /* 316px */
   }
 
+  /* Texts */
   .hero__title {
     max-width: 33rem; /* 528px */
   }
@@ -58,10 +59,12 @@ TABLET:
     text-align: center;
   }
 
+  /* Hero Partners */
   .hero__partners {
     padding-bottom: 1.5625rem; /* 25px */
   }
 
+  /* Footer */
   .attribution {
     margin-bottom: var(--space-sm);
   }
@@ -72,13 +75,16 @@ TABLET:
 MOBILE:
 ********************************
 */
-
 @media (max-width: 640px) {
   :root {
-    --container-width-content: 18.88rem; /* 302px */
-
+    /* Font sizes (in rem) */
     --fs-lg: 2rem; /* 32px */
+
+    /* Containers */
+    --container-width-content: 18.88rem; /* 302px */
   }
+
+  /* Containers & Wrappers */
   html,
   body {
     overflow-x: hidden;
@@ -117,12 +123,15 @@ MOBILE:
 
     background-color: transparent;
   }
+
+  /* Texts */
   .hero__title {
     max-width: var(--container-width-content);
     text-align: center;
     margin-bottom: 1rem; /* 16px */
   }
 
+  /* Hero Form */
   .hero__form {
     order: 2;
   }
@@ -138,6 +147,7 @@ MOBILE:
     margin-right: 0;
   }
 
+  /* Partners */
   .hero__partners {
     gap: 1rem; /* 16px */
     justify-content: center;
@@ -162,6 +172,7 @@ MOBILE:
     height: 1rem; /* 16px */
   }
 
+  /* Footer */
   .attribution {
     margin-top: 0;
   }

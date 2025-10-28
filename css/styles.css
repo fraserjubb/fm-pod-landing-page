@@ -109,6 +109,7 @@ svg {
 MAIN:
 ********************************
 */
+/* Containers & Wrappers */
 html,
 body {
   overflow-x: hidden;
@@ -127,39 +128,35 @@ body {
 }
 
 .hero__image-wrapper {
-  /* position: relative; */
   position: absolute;
   top: -10rem; /* -160px */
   right: 0;
   width: 100%;
 }
+
 .hero__image-wrapper::after {
   content: '';
   background-image: url('/assets/images/desktop/bg-pattern-dots.svg');
-  width: 14.5rem; /* 232px */
-  height: 6.5rem; /* 104px */
   position: absolute;
   top: 37.5rem; /* 600px */
   right: 0;
+  width: 14.5rem; /* 232px */
+  height: 6.5rem; /* 104px */
 }
 
 .hero__image {
   position: absolute;
-  z-index: -1;
-  height: 40.875rem; /* 654px */
   top: 0;
   right: 0;
+  z-index: -1;
+  height: 40.875rem; /* 654px */
   transform: translateX(3.125rem); /* 50px */
-}
-
-.hero__image img {
-  overflow: hidden;
 }
 
 .logo {
   position: absolute;
-  left: 10rem; /* 160px */
   top: 0;
+  left: 10rem; /* 160px */
   width: 8.428rem; /* 134.85px */
   height: 3.5rem; /* 56px */
   margin-bottom: var(--space-3xl);
@@ -173,9 +170,9 @@ body {
   background-color: var(--clr-blue-950);
 }
 
+/* Texts */
 .hero__title {
   margin-bottom: var(--space-sm);
-
   font-size: var(--fs-lg);
   line-height: var(--lh-title);
   text-transform: uppercase;
@@ -346,8 +343,8 @@ UTILITY CLASSES:
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
