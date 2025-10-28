@@ -93,12 +93,3 @@ EVENT LISTENERS:
 */
 emailInput.addEventListener('input', removeFeedback);
 heroForm.addEventListener('submit', handleFeedback);
-
-// Fixes cmd+a issue on tablet and mobile devices. Without it, it brings up the context menu.
-emailInput.addEventListener('keydown', e => {
-  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'a') {
-    // Force select all inside the input only
-    e.preventDefault();
-    emailInput.select();
-  }
-});
